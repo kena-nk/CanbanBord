@@ -15,7 +15,13 @@
     "outDir": "./.ts-cache/",
 
     // Useful type checks.
-    "strictNullChecks": true
+    "strictNullChecks": true,
+
+    // `import React` instead of `import * as React`
+    "allowSyntheticDefaultImports": true,
+
+    // <div /> => React.createElement("div")
+    "jsx": "react"
     },
 
     "include": ["./src/**/*"]
