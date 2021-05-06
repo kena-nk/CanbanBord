@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 import * as color from './color'
+import { GlobalStyle } from './GlobalStyle'
+import { App } from './App'
 
 function App() {
   return (
