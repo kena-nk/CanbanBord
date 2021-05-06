@@ -1,10 +1,9 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import { Header as _Header } from './Header'
 import { Column } from './Column'
 
-function App() {
+export function App() {
   return (
        <Container>
         <Header />
@@ -19,7 +18,6 @@ function App() {
                     { id: 'c', text: '布団に入る (:3[___]' },
                 ]}
             />
-
             <Column
                 title="Doing"
                 cards={[
@@ -27,11 +25,11 @@ function App() {
                     { id: 'e', text: '歯を磨く🦷' },
                 ]}
             />
-            <Column title="Waiting" />
+            <Column title="Waiting" cards={[{id: 'g', text: 'ご飯作る🍙'}]}/>
             <Column
                 title="Done"
                 cards={[
-                    {id: 'f', text: '布団から出る (:3っ)っ -=三[＿＿]' }
+                    { id: 'f', text: '布団から出る (:3っ)っ -=三[＿＿]' }
                 ]}
             />
           </HorizontalScroll>
