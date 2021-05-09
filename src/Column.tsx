@@ -12,6 +12,7 @@ export function Column ({
     cards: rawCards,
     onCardDragStart,
     onCardDrop,
+    onCardDeleteClick,
 }: {
     title?: string
     filterValue?: string
@@ -21,6 +22,7 @@ export function Column ({
     }[]
     onCardDragStart?(id: string): void
     onCardDrop?(entered: string | null): void
+    onCardDeleteClick?(id: string): void
 }) {
     const filterValue = rawFilterValue?.trim()
     const keywords = filterValue?.toLowerCase().split(/\s+/g) ?? []
@@ -69,9 +71,10 @@ export function Column ({
                 onDrop={() => onCardDrop?.(id)}
                 style={{ height: 'fit-content'}}>
                   <Card
+                    text={text}
                     onDragStart={() => handleCardDragStart(id)}
                     onDragEnd={() => setDraggingCardID(undefined)}
-                    text={text}
+                    onDeleteClick={() => onCardDeleteClick?.(id)}
                   />
                 </Card.DropArea>
               ))}
